@@ -46,7 +46,7 @@ app.add_url_rule('/<lang_code>/search/category',
 app.add_url_rule('/<lang_code>/fixed', view_func = handlers.fixed)
 app.add_url_rule('/<lang_code>/leaderboard.html',
     view_func = handlers.leaderboard)
-app.add_url_rule('/<lang_code>/create_intersection',
+app.add_url_rule('/<lang_code>/intersection',
     view_func = handlers.create_intersection, methods = ['POST'])
 
 if not debug:

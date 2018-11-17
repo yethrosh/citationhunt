@@ -1,0 +1,41 @@
+#intersection-controls .o-open {
+    /* Fighting bootstrap, which sets margin-bottom. */
+    margin: 0;
+
+    /* Make it look like a link. */
+    color: #0645AD;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.intersection-card {
+    padding: 5px;
+    display: none;
+}
+
+.intersection-card-active {
+    display: block;
+}
+
+#intersection-modal-container textarea {
+    resize: none;
+    border: 2px solid #937E7E;
+    width: 100%;
+    padding: 2px;
+}
+
+#intersection-created-link-wrapper {
+    text-align: center;
+}
+
+#intersection-card-end * {
+    /* Reset margin for <p> elements around #intersection-created-link */
+    margin: 0;
+}
+
+#intersection-created-link {
+    font-size: large;
+    border: 2px solid #937E7E;
+    margin: 1rem 0;
+    padding: 2px;
+}
