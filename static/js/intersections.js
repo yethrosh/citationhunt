@@ -22,10 +22,12 @@ $(function() {
         // TODO handle errors and empty intersections here.
         $('.intersection-card-active').removeClass('intersection-card-active');
         $('#intersection-card-end').addClass('intersection-card-active');
+        $('#intersection-narticles').text(response.page_ids.length)
         var intersectionURL = (
           document.location.origin + '/' + langCode + '?inter=' + response['id']);
         $('#intersection-created-link').val(intersectionURL);
         $('#intersection-created-link').attr('size', intersectionURL.length);
+        $('#intersection-created-link').focus();
         $('#intersection-created-link')[0].setSelectionRange(0, intersectionURL.length);
       },
     });
