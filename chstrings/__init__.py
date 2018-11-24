@@ -75,6 +75,35 @@ def _preprocess_variables(config, strings):
                 tooltitle = strings['tooltitle'],
                 days = '%s'))  # The template swaps in the actual number.
 
+    strings.setdefault('intersection_intro', '')
+    if strings['intersection_intro']:
+        strings['intersection_intro'] = flask.Markup(
+            strings['intersection_intro'].format(
+                em_start = '<b>',
+                em_end = '</b>',
+                tooltitle = strings['tooltitle']))
+
+    strings.setdefault('import_articles_prompt', '')
+    if strings['import_articles_prompt']:
+        strings['import_articles_prompt'] = flask.Markup(
+            strings['import_articles_prompt'].format(
+                em_start = '<b>',
+                em_end = '</b>'))
+
+    strings.setdefault('import_petscan_intro', '')
+    if strings['import_petscan_intro']:
+        strings['import_petscan_intro'] = flask.Markup(
+            strings['import_petscan_intro'].format(
+                em_start = '<b>',
+                em_end = '</b>'))
+
+    strings.setdefault('import_petscan_prompt', '')
+    if strings['import_petscan_prompt']:
+        strings['import_petscan_prompt'] = flask.Markup(
+            strings['import_petscan_prompt'].format(
+                link_start = _link_start(config.petscan_url),
+                link_end = '</a>'))
+
     strings.setdefault('intersection_notice', '')
     if strings['intersection_notice']:
         strings['intersection_notice'] = flask.Markup(

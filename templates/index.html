@@ -52,32 +52,15 @@
           <label for="intersection-modal-trigger" class="o-open">Intersections</label>
           <div class="pure-modal">
             <input id="intersection-modal-trigger" class="checkbox" type="checkbox">
-            <div class="pure-modal-overlay">
+            <div id="intersection-modal-wrapper" class="pure-modal-overlay">
               <label for="intersection-modal-trigger" class="o-close"></label>
-              <div id="intersection-modal-container" class="pure-modal-wrap a-center">
-                <div id="intersection-begin-card" class="intersection-card intersection-card-active">
-                  <h3>Create intersection</h3>
-                  <p>An <b>intersection</b> is a collection of articles in Citation Hunt. You can create one and share a link to it so others can browse {{ strings.tooltitle }} restricted to the articles you specified.</p>
-                  <p>To create an intersection, you need to import a list of articles. Where would you like to import from?</p>
-                  <ul>
-                    <li><a id="import-article-titles-link" href="">A list of article titles</a></li>
-                  </ul>
-                </div>
-                <div id="import-article-titles-card" class="intersection-card">
-                  <h3>Import articles by title</h3>
-                  <p>Please enter article titles, one per line:</p>
-                  <textarea rows=5></textarea>
-                  <a id="intersections-prev-card-link" href="">Back</a>
-                  <a id="intersections-submit" href="">Submit!</a>
-                </div>
-                <div id="intersection-card-end" class="intersection-card">
-                  <h3>All done!</h3>
-                  <p>Your intersection has been created! It contains snippets from <span id="intersection-narticles"></span> articles and is valid for <b>30 days</b>:</p>
-                  <div id="intersection-created-link-wrapper">
-                      <input id="intersection-created-link" readonly="true" type="text"/>
+              <div class="pure-modal-wrap a-center">
+                  <div id="intersection-card-container"></div>
+                  <div id="intersection-buttons-container" class="row justify-content-center">
+                      <a id="intersection-button-back" class="col-1" href="">{{ strings.back }}</a>
+                      <div class="col-1"></div> <!-- direction-independent spacing -->
+                      <a id="intersection-button-submit" class="col-1" href="">{{ strings.submit }}</a>
                   </div>
-                  <p>You can copy and share the link above to allow other people to browse the intersection.</p>
-                </div>
               </div>
             </div>
           </div>
@@ -163,6 +146,34 @@
       {% for k, v in js_strings.items() | sort %}
         data-{{ k }}="{{ v }}"
       {% endfor %}
+    </div>
+
+    <div id="intersection-wizard-cards" hidden>
+      <div id="intersection-landing-card" class="intersection-card">
+        <h3>{{ strings.create_intersection }}</h3>
+        <p>{{ strings.intersection_intro }}</p>
+        <p>{{ strings.intersection_import_prompt }}</p>
+        <ul>
+          <li><a id="import-article-titles-link" href="">{{ strings.import_article_titles }}</a></li>
+          <li><a id="import-petscan-link" href="">{{ strings.import_petscan }}</a></li>
+        </ul>
+      </div>
+      <div id="import-article-titles-card" class="intersection-card">
+        <p>{{ strings.import_articles_prompt }}</p>
+        <textarea rows=5></textarea>
+      </div>
+      <div id="import-petscan-card" class="intersection-card">
+        <p>{{ strings.import_petscan_intro }}</p>
+        <p>{{ strings.import_petscan_prompt }}</p>
+        <input type="text"></input>
+      </div>
+      <div id="intersection-card-end" class="intersection-card">
+        <p id="intersection-created"></p>
+        <div id="intersection-created-link-wrapper">
+          <input id="intersection-created-link" readonly="true" type="text"/>
+        </div>
+        <p>{{ strings.intersection_end_copy_link }}</p>
+      </div>
     </div>
   </body>
 </html>

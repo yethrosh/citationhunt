@@ -30,14 +30,15 @@ def intersect_with_page_titles(cfg, page_titles):
     for chunk in ichunk(page_titles, PAGE_TITLES_PER_API_REQUEST):
         params = {'titles': '|'.join(chunk)}
         for response in wiki.query(params):
-            page_ids.extend(response['query']['pages'].keys())
+            if 'query' in response and 'pages' in response['query']:
+                page_ids.extend(response['query']['pages'].keys())
     if not page_ids:
-        return '', 0
+        return '', []
     return intersect_with_page_ids(cfg, page_ids)
 
 def intersect_with_page_ids(cfg, page_ids):
     if not page_ids:
-        return '', 0
+        return '', []
     return database.create_intersection(
         cfg.lang_code, page_ids, cfg.intersection_max_size,
         cfg.intersection_expiration_days)
@@ -50,11 +51,12 @@ def create_intersection(lang_code):
         validate_request_json(request)
     except:
         return flask.jsonify(error = 'Invalid request')
-
     if 'page_ids' in request:
         id, page_ids = intersect_with_page_ids(cfg, request['page_ids'])
     elif 'page_titles' in request:
         id, page_ids = intersect_with_page_titles(cfg, request['page_titles'])
     elif 'psid' in request:
         id, page_ids = intersect_with_psid(cfg, request['psid'])
-    return flask.jsonify(id = id, page_ids = page_ids)
+    return flask.jsonify(
+        id = id, page_ids = page_ids,
+        ttl_days = cfg.intersection_expiration_days)

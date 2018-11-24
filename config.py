@@ -32,6 +32,8 @@ _GLOBAL_CONFIG = dict(
 
     user_agent = 'citationhunt (https://tools.wmflabs.org/citationhunt)',
 
+    petscan_url = 'https://petscan.wmflabs.org',
+
     # The maximum number of articles to import into an intersection.
     intersection_max_size = 4096,
 

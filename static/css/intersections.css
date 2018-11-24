@@ -8,16 +8,11 @@
     cursor: pointer;
 }
 
-.intersection-card {
+#intersection-modal-wrapper {
     padding: 5px;
-    display: none;
 }
 
-.intersection-card-active {
-    display: block;
-}
-
-#intersection-modal-container textarea {
+#intersection-card-container textarea {
     resize: none;
     border: 2px solid #937E7E;
     width: 100%;
@@ -38,4 +33,8 @@
     border: 2px solid #937E7E;
     margin: 1rem 0;
     padding: 2px;
+}
+
+#intersection-buttons-container {
+    margin: 5px;
 }

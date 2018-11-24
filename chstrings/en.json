@@ -1,5 +1,16 @@
 {
   "tooltitle": "Citation Hunt",
+  "back": "Back",
+  "submit": "Submit",
+  "create_intersection": "Create intersection",
+  "intersection_intro": "An {em_start}intersection{em_end} is a collection of articles in {tooltitle}. You can create one and share a link to it so others can browse {tooltitle} restricted to the articles you specified.",
+  "intersection_import_prompt": "To create an intersection, you need to import a list of articles. Where would you like to import from?",
+  "import_article_titles": "A list of article titles",
+  "import_petscan": "A PetScan query",
+  "import_articles_prompt": "Please enter Wikipedia {em_start}article titles{em_end} to import, one per line, in the area below:",
+  "import_petscan_intro": "{em_start}PetScan{em_end} is a powerful tool for querying Wikipedia and defining lists of articles. After a user makes a query, PetScan assigns it an ID that can be used to import the query into other tools.",
+  "import_petscan_prompt": "Please {link_start}create your query in PetScan{link_end} and paste its URL or ID below:",
+  "intersection_end_copy_link": "You can copy and share the link above to allow other people to browse the intersection.",
   "introduction": "Help find citations for Wikipedia articles!",
   "instructions_goal": "The Wikipedia snippet below is not backed by a {link_start}reliable source{link_end}. Can you find one?",
   "instructions_details": "Click %s to go to Wikipedia and fix the snippet, or %s to see another one. Check %s if you have questions. Good luck!",
@@ -22,5 +33,6 @@
   "js-article-count": "$1 {{PLURAL:$1|article|articles}}",
   "js-keyboard-shortcut": "Keyboard shortcut: %s",
   "js-refs-added-today": "$1 {{PLURAL:$1|citation|citations}} added today!",
-  "js-leaving-intersection": "You are navigating away from the current intersection. Are you sure?"
+  "js-leaving-intersection": "You are navigating away from the current intersection. Are you sure?",
+  "js-intersection-created": "Your intersection has been created! It contains snippets from $1 {{PLURAL:$1|article|articles}} of the imported articles and is valid for $2 {{PLURAL:$2|day|days}}:"
 }
