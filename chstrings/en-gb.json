@@ -40,5 +40,5 @@
 	"js-keyboard-shortcut": "Keyboard shortcut: %s",
 	"js-refs-added-today": "$1 {{PLURAL:$1|citation|citations}} added today!",
 	"js-leaving-intersection": "You are navigating away from the current intersection. Are you sure?"
-	"js-intersection-created": "Your intersection has been created! It contains snippets from $1 {{PLURAL:$1|article|articles}} of the imported articles and is valid for $2 {{PLURAL:$2|day|days}}:"
+	"js-intersection-created": "Your intersection has been created! It contains snippets from $1 {{PLURAL:$1|article|articles}} and is valid for $2 {{PLURAL:$2|day|days}}:"
 }
